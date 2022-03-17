@@ -47,6 +47,7 @@ brew 'stripe/stripe-cli/stripe'
 brew 'stripe/stripe-mock/stripe-mock'
 brew 'svn' # Needed to install fonts
 brew 'telnet'
+brew 'thefuck'
 brew 'tldr'
 brew 'tree'
 brew 'ugrep'
