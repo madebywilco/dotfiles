@@ -1,5 +1,7 @@
 #!/bin/sh
 
+DOTFILES=$HOME/.dotfiles/
+
 echo "Setting up your Mac..."
 
 # Check for Oh My Zsh and install if we don't have it
@@ -33,7 +35,7 @@ mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_passwor
 pecl install imagick redis swoole
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/valet beyondcode/expose
+composer global require laravel/installer laravel/valet beyondcode/expose botman/installer laravel/envoy laravel/vapor-cli nunomaduro/laracon-schedule statamic/cli tightenco/takeout -W
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
@@ -41,9 +43,8 @@ $HOME/.composer/vendor/bin/valet install
 # Create a Sites directory
 mkdir $HOME/Sites
 
-# Create sites subdirectories
-mkdir $HOME/Sites/blade-ui-kit
-mkdir $HOME/Sites/laravel
+# Create code directory
+mkdir $HOME/Code
 
 # Clone Github repositories
 $DOTFILES/clone.sh
@@ -51,5 +52,39 @@ $DOTFILES/clone.sh
 # Symlink the Mackup config file to the home directory
 ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
 
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+### Node Packages ###
+
+# Install alfred-jetbrains
+npm install -g @bchatard/alfred-jetbrains
+
+# Install Maizelle
+npm install -g @maizzle/cli
+
+# Alfred Updater
+npm install -g alfred-updater
+
+npm install --global delay-cli
+
+npm install --global wifi-password-cli
+
+npm install --global itunes-remote
+
+npm install lib.cli -g
+
+npm install --global fkill-cli
+
+npm install --global dev-time-cli
+
+npm install --global favicon-emoji
+
+npm install --global lock-cli
+
+npm install pm2 -g
+
+npm i -g vercel
+
 # Set macOS preferences - we will run this last because this will reload the shell
 source $DOTFILES/.macos
+
