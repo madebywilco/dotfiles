@@ -84,7 +84,6 @@ plugins=(
     docker
     dash
     fig
-    dotenv
     macos
     lpass
     laravel

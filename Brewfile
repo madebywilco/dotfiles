@@ -96,7 +96,6 @@ brew 'yarn'
 
 # Apps
 cask 'adobe-creative-cloud'
-cask 'alfred'
 cask 'bartender'
 cask 'betterzip'
 cask 'cleanmymac'
