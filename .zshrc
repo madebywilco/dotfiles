@@ -2,7 +2,7 @@
 export PATH="${PATH}:${HOME}/.local/bin"
 eval "$(fig init zsh pre)"
 
-export DOTFILES=$HOME/.dotfiles
+export DOTFILES=$HOME/Code/dotfiles
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -12,7 +12,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -20,7 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
 #ZSH_THEME="jonathan"
-ZSH_THEME="custom/themes/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -67,7 +66,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$DOTFILES
+ZSH_CUSTOM=$DOTFILES/themes
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -131,23 +130,23 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run alias.
 #
 # Example aliases
-alias zshconfig="code ~/.zshrc"
-alias ohmyzsh="code ~/.oh-my-zsh"
+alias zshconfig="code ~/Code/dotfiles/.zshrc"
+alias ohmyzsh="code ~/Code/dotfiles/.oh-my-zsh"
 
 # Paths
-[ -e "${HOME}/.egantz-dotfiles/.paths" ] && source "${HOME}/.egantz-dotfiles/.paths"
+[ -e "${HOME}/Code/.dotfiles/paths.zsh" ] && source "${HOME}/Code/.dotfiles/paths.zsh"
 
 # Helper Functions
-[ -e "${HOME}/.egantz-dotfiles/.helper-functions" ] && source "${HOME}/.egantz-dotfiles/.helper-functions"
+[ -e "${HOME}/Code/.dotfiles/helpers.sh" ] && source "${HOME}/Code/.dotfiles/helpers.sh"
 
 # Aliases
-[ -e "${HOME}/.egantz-dotfiles/.aliases" ] && source "${HOME}/.egantz-dotfiles/.aliases"
+[ -e "${HOME}/Code/.dotfiles/aliases.zsh" ] && source "${HOME}/Code/.dotfiles/aliases.zsh"
 
 
 # Load iTerm2 Shell Integration
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
-. /usr/local/etc/profile.d/z.sh
+# . /usr/local/etc/profile.d/z.sh
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #export PATH="/usr/local/opt/ruby/bin:$PATH"

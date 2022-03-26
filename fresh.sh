@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES=$HOME/.dotfiles/
+DOTFILES=$HOME/Code/.dotfiles/
 
 echo "Setting up your Mac..."
 
@@ -19,7 +19,7 @@ fi
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+ln -s $DOTFILES/.zshrc $HOME/.zshrc
 
 # Update Homebrew recipes
 brew update
@@ -43,9 +43,6 @@ $HOME/.composer/vendor/bin/valet install
 # Create a Sites directory
 mkdir $HOME/Sites
 
-# Create code directory
-mkdir $HOME/Code
-
 # Clone Github repositories
 $DOTFILES/clone.sh
 
@@ -56,14 +53,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 ### Node Packages ###
 
-# Install alfred-jetbrains
-npm install -g @bchatard/alfred-jetbrains
-
 # Install Maizelle
 npm install -g @maizzle/cli
-
-# Alfred Updater
-npm install -g alfred-updater
 
 npm install --global delay-cli
 
@@ -84,6 +75,8 @@ npm install --global lock-cli
 npm install pm2 -g
 
 npm i -g vercel
+
+echo "Don't forget to get Docker for Apple Silicon: https://docs.docker.com/desktop/mac/apple-silicon/"
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source $DOTFILES/.macos

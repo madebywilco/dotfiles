@@ -96,21 +96,21 @@ brew 'yarn'
 
 # Apps
 cask 'adobe-creative-cloud'
-cask 'bartender'
+# cask 'bartender' # we use SetApp
 cask 'betterzip'
-cask 'cleanmymac'
-cask 'cleanshot'
+# cask 'cleanmymac' # we use SetApp
+# cask 'cleanshot' # we use SetApp
 cask 'dash'
 # cask 'dashlane'
 cask 'dbngin'
 cask 'daisydisk'
 cask 'discord'
-# cask 'docker'
+cask 'docker'
 cask 'expressions'
 cask 'fig'
 cask 'foobar2000'
 cask 'github'
-# cask 'google-chrome'
+cask 'google-chrome'
 cask 'gpg-suite'
 cask 'helo'
 cask 'home-assistant'
@@ -141,11 +141,10 @@ cask 'raycast'
 cask 'setapp'
 cask 'sizzy'
 cask 'skype'
-# cask 'spotify'
+cask 'spotify'
 cask 'slack'
 cask 'staruml'
-cask 'tableplus'
-# cask 'telegram-desktop'
+# cask 'telegram-desktop' # Using MAS Below
 cask 'tidal'
 cask 'timing'
 cask 'tinkerwell'
@@ -157,7 +156,7 @@ cask 'visual-studio-code'
 cask 'virtualbox'
 cask 'whatsapp'
 cask 'wifi-explorer'
-# cask 'world time pro'
+cask 'world time pro'
 cask 'zeplin'
 cask 'zoom'
 
@@ -175,9 +174,10 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
 # Mac App Store
-mas 'Numbers', id: 409203825
+# mas 'Numbers', id: 409203825 # Using Excel through microsoft office above
 mas 'Deliveries', id: 924726344
 mas 'djay Pro AI', id: 450527929
 mas 'Trello', id: 1278508951
 mas 'Shazam', id: 897118787
 mas 'Telegram', id: 747648890
+mas 'Bonsai Time Tracker', id: 1333596451
