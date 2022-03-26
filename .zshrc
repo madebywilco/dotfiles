@@ -74,6 +74,7 @@ ZSH_CUSTOM=$DOTFILES/themes
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    artisan
     cp
     gh
     git
@@ -181,7 +182,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
+# Add ZSH Artisan:
+# https://github.com/jessarcher/zsh-artisan
+antigen bundle jessarcher/zsh-artisan
 
 # Fig post block. Keep at the bottom of this file.
 eval "$(fig init zsh post)"
