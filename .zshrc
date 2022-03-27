@@ -2,7 +2,7 @@
 export PATH="${PATH}:${HOME}/.local/bin"
 eval "$(fig init zsh pre)"
 
-export DOTFILES=$HOME/Code/dotfiles
+export DOTFILES=$HOME/.dotfiles
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -66,7 +66,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$DOTFILES/themes
+# ZSH_CUSTOM=$DOTFILES/themes
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -134,14 +134,6 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="code ~/Code/dotfiles/.zshrc"
 alias ohmyzsh="code ~/Code/dotfiles/.oh-my-zsh"
 
-# Paths
-[ -e "${HOME}/Code/.dotfiles/paths.zsh" ] && source "${HOME}/Code/.dotfiles/paths.zsh"
-
-# Helper Functions
-[ -e "${HOME}/Code/.dotfiles/helpers.sh" ] && source "${HOME}/Code/.dotfiles/helpers.sh"
-
-# Aliases
-[ -e "${HOME}/Code/.dotfiles/aliases.zsh" ] && source "${HOME}/Code/.dotfiles/aliases.zsh"
 
 
 # Load iTerm2 Shell Integration
@@ -164,7 +156,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
 
-
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 
@@ -184,7 +175,16 @@ fi
 
 # Add ZSH Artisan:
 # https://github.com/jessarcher/zsh-artisan
-antigen bundle jessarcher/zsh-artisan
+# antigen bundle jessarcher/zsh-artisan
+
+# Paths
+source "$DOTFILES/path.zsh"
+
+# Helper Functions
+source "$DOTFILES/helpers.sh"
+
+# Aliases
+source "$DOTFILES/aliases.zsh"
 
 # Fig post block. Keep at the bottom of this file.
 eval "$(fig init zsh post)"

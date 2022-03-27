@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES=$HOME/Code/.dotfiles/
+DOTFILES=$HOME/.dotfiles/
 
 echo "Setting up your Mac..."
 
