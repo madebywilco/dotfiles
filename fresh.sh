@@ -29,6 +29,7 @@ brew tap homebrew/bundle
 brew bundle --file $DOTFILES/Brewfile
 
 # Set default MySQL root password and auth type
+mysql.server start
 mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
 
 # Install PHP extensions with PECL
@@ -42,6 +43,9 @@ $HOME/.composer/vendor/bin/valet install
 
 # Create a Sites directory
 mkdir $HOME/Sites
+
+# Create a Code directory
+mkdir $HOME/Code
 
 # Clone Github repositories
 $DOTFILES/clone.sh
