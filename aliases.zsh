@@ -76,6 +76,7 @@ alias sp='sail php'
 alias pest='a test'
 alias spest='sa test'
 alias pstan='./vendor/bin/phpstan'
+alias pint='./vendor/bin/pint --preset laravel'
 
 # list all "Host" and "HostName" lines, then remove the strings: "Host " and "HostName "
 alias ssh-hosts="grep -w -i -E 'Host|HostName' $HOME/.ssh/config | sed 's/Host //' | sed 's/HostName //'"

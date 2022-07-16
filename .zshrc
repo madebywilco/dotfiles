@@ -40,6 +40,9 @@ HYPHEN_INSENSITIVE="true"
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=5
 
+# Makes homebrew updates not blocked by gatekeeper on macos
+export HOMEBREW_CASK_OPTS="--no-quarantine"
+
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
